@@ -15,7 +15,8 @@ namespace QuanLyLapTop
         {
             try
             {
-                string strConnection = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Thanh Tuan\Documents\Visual Studio 2015\Projects\QuanLyLapTop\Database.mdb";
+                string dir = AppDomain.CurrentDomain.BaseDirectory;
+                string strConnection = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source="+dir+"Database.mdb";
                 Connec = new OleDbConnection(strConnection);
                 Connec.Open();
             }

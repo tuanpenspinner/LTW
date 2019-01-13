@@ -63,6 +63,16 @@ namespace QuanLyLapTop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _10206_man_student_icon {
+            get {
+                object obj = ResourceManager.GetObject("10206-man-student-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add_icon {
             get {
                 object obj = ResourceManager.GetObject("add-icon", resourceCulture);
@@ -93,6 +103,36 @@ namespace QuanLyLapTop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Devices_input_gaming_icon {
+            get {
+                object obj = ResourceManager.GetObject("Devices-input-gaming-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Filter_2_icon {
+            get {
+                object obj = ResourceManager.GetObject("Filter-2-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gold_ingot_icon {
+            get {
+                object obj = ResourceManager.GetObject("gold-ingot-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Home_icon {
             get {
                 object obj = ResourceManager.GetObject("Home-icon", resourceCulture);
@@ -116,6 +156,26 @@ namespace QuanLyLapTop.Properties {
         internal static System.Drawing.Bitmap money_icon {
             get {
                 object obj = ResourceManager.GetObject("money-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap No_imgae {
+            get {
+                object obj = ResourceManager.GetObject("No imgae", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PSD_File_icon {
+            get {
+                object obj = ResourceManager.GetObject("PSD-File-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

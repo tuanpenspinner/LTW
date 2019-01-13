@@ -17,7 +17,7 @@ namespace QuanLyLapTop
         public string Hard { get; set; }
         public int Ram { get; set; }
         public int Memory { get; set; }
-        public float Desktop { get; set; }
+        public double Desktop { get; set; }
         public string Species { get; set; }
         public string Card { get; set; }
         public string CPU { get; set; }
