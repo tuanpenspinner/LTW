@@ -16,6 +16,7 @@ namespace QuanLyLapTop
         private Laptop laptop;
         Database Db = new Database();
         string ImagePath = "";
+        bool sts = false;
         public frmLaptop()
         {
             InitializeComponent();
@@ -95,13 +96,8 @@ namespace QuanLyLapTop
             txtSoLuong.Text = laptop.Number.ToString();
             picImage.Image = Image.FromFile(laptop.ImagePath);
             ImagePath = laptop.ImagePath;
+            chkNgungKinhDoanh.Checked = laptop.Status;
 
-        }
-
-
-        private void frmLaptop_Load(object sender, EventArgs e)
-        {
- 
         }
 
 
@@ -139,9 +135,19 @@ namespace QuanLyLapTop
                     {
                         LoaiCard = "Rời + OnBoard";
                     }
+
+                    if (chkNgungKinhDoanh.Checked == true)
+                    {
+                        sts = true;
+                    }
+                    else
+                    {
+                        sts = false;
+                    }
                     Db.Connection_Open();
-                    string SQL = "INSERT INTO TbLaptop ([Name],[Brand],[Funt],[Cost],[Hard],[RAM],[Memory],[Desktop],[Species],[Card],[CPU],[Resolution],[Weight],[Num],[Img])"
-                        + "VALUES('" + txtNameLaptop.Text + "','" + cmbHangSX.Text + "','" + cmbMucDichSD.SelectedItem.ToString() + "','" + Convert.ToInt32(txtGia.Text) + "','" + cbmLoaiOCung.SelectedItem.ToString() + "','" + txtRAM.Text + "','" + txtDungLuong.Text + "','" + Convert.ToDouble(txtKichThuocManHinh.Text) + "','" + LoaiCard + "','" + txtCardManHinh.Text + "','" + cmbCPU.SelectedItem.ToString() + "','" + cmbDoPhanGiai.SelectedItem.ToString() + "','" + Convert.ToDouble(txtKhoiLuong.Text) + "','" + Convert.ToInt32(txtSoLuong.Text) + "','" + ImagePath + "')";
+                    txtSoLuong.Text = (Convert.ToInt32(txtSoLuong.Text) + Convert.ToInt32(txtThem.Text)).ToString();
+                    string SQL = "INSERT INTO TbLaptop ([Name],[Brand],[Funt],[Cost],[Hard],[RAM],[Memory],[Desktop],[Species],[Card],[CPU],[Resolution],[Weight],[Num],[Img],[Status])"
+                        + "VALUES('" + txtNameLaptop.Text + "','" + cmbHangSX.Text + "','" + cmbMucDichSD.SelectedItem.ToString() + "','" + Convert.ToInt32(txtGia.Text) + "','" + cbmLoaiOCung.SelectedItem.ToString() + "','" + txtRAM.Text + "','" + txtDungLuong.Text + "','" + Convert.ToDouble(txtKichThuocManHinh.Text) + "','" + LoaiCard + "','" + txtCardManHinh.Text + "','" + cmbCPU.SelectedItem.ToString() + "','" + cmbDoPhanGiai.SelectedItem.ToString() + "','" + Convert.ToDouble(txtKhoiLuong.Text) + "','" + Convert.ToInt32(txtSoLuong.Text) + "','" + ImagePath + "'),'"+sts+"'";
                     Db.Exc(Db.Connec, SQL);
                     MessageBox.Show("Thêm sản phẩm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -163,16 +169,14 @@ namespace QuanLyLapTop
 
         }
 
-        private void btnThoat_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
-            this.Dispose();
 
-            frmHome frm = new frmHome();
-            frm.Show();
+            Update();
+            MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void Update()
         {
             string LoaiCard = "";
             if (KT())
@@ -191,11 +195,20 @@ namespace QuanLyLapTop
                 {
                     LoaiCard = "Rời + OnBoard";
                 }
+
+                if (chkNgungKinhDoanh.Checked == true)
+                {
+                    sts = true;
+                }
+                else
+                {
+                    sts = false;
+                }
                 Db.Connection_Open();
                 OleDbCommand cmd = Db.Connec.CreateCommand();
                 cmd.CommandText = " UPDATE TbLaptop SET Name = @name, Brand = @brand,Funt=@funtion,Cost = @cost,Hard = @hard,"
                    + "RAM = @ram,Memory = @memory,Desktop = @desktop,Species = @species,Card = @card"
-               + ",CPU = @CPU,Resolution = @resolution,Weight =@weight,Num = @num,Img = @img"
+               + ",CPU = @CPU,Resolution = @resolution,Weight =@weight,Num = @num,Img = @img,Status = @status"
                    + " WHERE [ID] = " + ID;
 
                 cmd.Parameters.AddWithValue("@name", txtNameLaptop.Text);
@@ -213,25 +226,20 @@ namespace QuanLyLapTop
                 cmd.Parameters.AddWithValue("@CPU", cmbCPU.SelectedItem.ToString());
                 cmd.Parameters.AddWithValue("@resolution", cmbDoPhanGiai.SelectedItem.ToString());
                 cmd.Parameters.AddWithValue("@weight", Convert.ToDouble(txtKhoiLuong.Text));
-
+                txtSoLuong.Text = (Convert.ToInt32(txtSoLuong.Text) + Convert.ToInt32(txtThem.Text)).ToString();
                 cmd.Parameters.AddWithValue("@num", Convert.ToInt32(txtSoLuong.Text));
                 cmd.Parameters.AddWithValue("@img", ImagePath);
+                cmd.Parameters.AddWithValue("@status", sts);
 
                 cmd.ExecuteNonQuery();
-                //string SQL = "UPDATE TbLaptop SET Num = 10000000 WHERE ID=" + ID;
-                //OleDbCommand cmd1 = new OleDbCommand(SQL, Db.Connec);
-                //cmd1.ExecuteNonQuery();
-
 
                 Db.Connection_Close();
-
-                MessageBox.Show("Cập nhật thành công","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+  
             }
             else
             {
                 MessageBox.Show("Chưa nhập đủ dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
         }
 
         private bool KT()
@@ -247,14 +255,39 @@ namespace QuanLyLapTop
         {
             this.Dispose();
             frmHome frm = new frmHome();
+            frm.btnTrangChu.BackColor = Color.Teal;
+            frm.btnThemSanPham.BackColor = Color.White;
             frm.Show();
         }
 
         private void btnThemSanPham_Click(object sender, EventArgs e)
         {
+            this.Dispose();
             frmLaptop frm = new frmLaptop();
             frm.Show();
+            frm.btnThemSanPham.BackColor = Color.Teal;
+            frm.btnTrangChu.BackColor = Color.White;
             frm.btnUpdate.Visible = false;
+        }
+
+        private void btnThoat_Click_1(object sender, EventArgs e)
+        {
+            this.Dispose();
+
+            frmHome frm = new frmHome();
+            frm.Show();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            chkNgungKinhDoanh.Checked = true;
+            Update();
+            MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void frmLaptop_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }

@@ -55,7 +55,6 @@
             this.lblCauHinh = new System.Windows.Forms.Label();
             this.lblHangSX = new System.Windows.Forms.Label();
             this.lblTen = new System.Windows.Forms.Label();
-            this.btnBrowser = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.txtKhoiLuong = new System.Windows.Forms.TextBox();
@@ -82,13 +81,19 @@
             this.lbl = new System.Windows.Forms.Label();
             this.lblCPU = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.btnRevenue = new System.Windows.Forms.Button();
+            this.btnHistory = new System.Windows.Forms.Button();
             this.btnThemSanPham = new System.Windows.Forms.Button();
             this.btnTrangChu = new System.Windows.Forms.Button();
+            this.btnBrowser = new System.Windows.Forms.Button();
             this.picImage = new System.Windows.Forms.PictureBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.chkNgungKinhDoanh = new System.Windows.Forms.CheckBox();
+            this.txtThem = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -359,18 +364,6 @@
             this.lblTen.TabIndex = 59;
             this.lblTen.Text = "*";
             // 
-            // btnBrowser
-            // 
-            this.btnBrowser.AutoSize = true;
-            this.btnBrowser.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBrowser.Location = new System.Drawing.Point(936, 500);
-            this.btnBrowser.Name = "btnBrowser";
-            this.btnBrowser.Size = new System.Drawing.Size(147, 41);
-            this.btnBrowser.TabIndex = 56;
-            this.btnBrowser.Text = "Chọn hình";
-            this.btnBrowser.UseVisualStyleBackColor = true;
-            this.btnBrowser.Click += new System.EventHandler(this.btnBrowser_Click);
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -626,35 +619,49 @@
             this.label16.TabIndex = 86;
             this.label16.Text = "Kg";
             // 
-            // button3
+            // btnThoat
             // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button3.Image = global::QuanLyLapTop.Properties.Resources.money_icon;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(658, 7);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(145, 67);
-            this.button3.TabIndex = 90;
-            this.button3.Text = "Doanh thu";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.Image = global::QuanLyLapTop.Properties.Resources.Close_icon;
+            this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThoat.Location = new System.Drawing.Point(1029, 613);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(143, 44);
+            this.btnThoat.TabIndex = 91;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click_1);
             // 
-            // button2
+            // btnRevenue
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.Image = global::QuanLyLapTop.Properties.Resources.store_icon;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(410, 7);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(214, 67);
-            this.button2.TabIndex = 89;
-            this.button2.Text = "Lịch sử mua hàng";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnRevenue.BackColor = System.Drawing.Color.White;
+            this.btnRevenue.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRevenue.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnRevenue.Image = global::QuanLyLapTop.Properties.Resources.money_icon;
+            this.btnRevenue.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRevenue.Location = new System.Drawing.Point(987, 7);
+            this.btnRevenue.Name = "btnRevenue";
+            this.btnRevenue.Size = new System.Drawing.Size(145, 67);
+            this.btnRevenue.TabIndex = 90;
+            this.btnRevenue.Text = "Doanh thu";
+            this.btnRevenue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRevenue.UseVisualStyleBackColor = false;
+            // 
+            // btnHistory
+            // 
+            this.btnHistory.BackColor = System.Drawing.Color.White;
+            this.btnHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHistory.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnHistory.Image = global::QuanLyLapTop.Properties.Resources.store_icon;
+            this.btnHistory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHistory.Location = new System.Drawing.Point(629, 7);
+            this.btnHistory.Name = "btnHistory";
+            this.btnHistory.Size = new System.Drawing.Size(214, 67);
+            this.btnHistory.TabIndex = 89;
+            this.btnHistory.Text = "Lịch sử bán hàng";
+            this.btnHistory.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnHistory.UseVisualStyleBackColor = false;
             // 
             // btnThemSanPham
             // 
@@ -663,7 +670,7 @@
             this.btnThemSanPham.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnThemSanPham.Image = global::QuanLyLapTop.Properties.Resources.laptop_icon;
             this.btnThemSanPham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemSanPham.Location = new System.Drawing.Point(179, 7);
+            this.btnThemSanPham.Location = new System.Drawing.Point(259, 7);
             this.btnThemSanPham.Name = "btnThemSanPham";
             this.btnThemSanPham.Size = new System.Drawing.Size(199, 67);
             this.btnThemSanPham.TabIndex = 88;
@@ -688,13 +695,28 @@
             this.btnTrangChu.UseVisualStyleBackColor = false;
             this.btnTrangChu.Click += new System.EventHandler(this.btnTrangChu_Click);
             // 
+            // btnBrowser
+            // 
+            this.btnBrowser.AutoSize = true;
+            this.btnBrowser.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBrowser.Image = global::QuanLyLapTop.Properties.Resources.Folder_Open_icon;
+            this.btnBrowser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBrowser.Location = new System.Drawing.Point(872, 500);
+            this.btnBrowser.Name = "btnBrowser";
+            this.btnBrowser.Size = new System.Drawing.Size(168, 41);
+            this.btnBrowser.TabIndex = 56;
+            this.btnBrowser.Text = "Chọn hình";
+            this.btnBrowser.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBrowser.UseVisualStyleBackColor = true;
+            this.btnBrowser.Click += new System.EventHandler(this.btnBrowser_Click);
+            // 
             // picImage
             // 
             this.picImage.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.picImage.Image = global::QuanLyLapTop.Properties.Resources.No_imgae;
-            this.picImage.Location = new System.Drawing.Point(752, 248);
+            this.picImage.Location = new System.Drawing.Point(752, 278);
             this.picImage.Name = "picImage";
-            this.picImage.Size = new System.Drawing.Size(331, 227);
+            this.picImage.Size = new System.Drawing.Size(311, 216);
             this.picImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picImage.TabIndex = 55;
             this.picImage.TabStop = false;
@@ -727,13 +749,62 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Image = global::QuanLyLapTop.Properties.Resources.Button_Delete_icon;
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.Location = new System.Drawing.Point(752, 613);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(130, 44);
+            this.btnDelete.TabIndex = 93;
+            this.btnDelete.Text = "Xóa";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // chkNgungKinhDoanh
+            // 
+            this.chkNgungKinhDoanh.AutoSize = true;
+            this.chkNgungKinhDoanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkNgungKinhDoanh.Location = new System.Drawing.Point(641, 547);
+            this.chkNgungKinhDoanh.Name = "chkNgungKinhDoanh";
+            this.chkNgungKinhDoanh.Size = new System.Drawing.Size(202, 28);
+            this.chkNgungKinhDoanh.TabIndex = 94;
+            this.chkNgungKinhDoanh.Text = "Ngừng kinh doanh";
+            this.chkNgungKinhDoanh.UseVisualStyleBackColor = true;
+            // 
+            // txtThem
+            // 
+            this.txtThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtThem.Location = new System.Drawing.Point(814, 239);
+            this.txtThem.Name = "txtThem";
+            this.txtThem.Size = new System.Drawing.Size(165, 29);
+            this.txtThem.TabIndex = 96;
+            this.txtThem.Text = "0";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(748, 242);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(65, 24);
+            this.label20.TabIndex = 95;
+            this.label20.Text = "Thêm:";
+            // 
             // frmLaptop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 661);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.txtThem);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.chkNgungKinhDoanh);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnThoat);
+            this.Controls.Add(this.btnRevenue);
+            this.Controls.Add(this.btnHistory);
             this.Controls.Add(this.btnThemSanPham);
             this.Controls.Add(this.btnTrangChu);
             this.Controls.Add(this.label16);
@@ -857,9 +928,14 @@
         private System.Windows.Forms.Label lbl;
         private System.Windows.Forms.Label lblCPU;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnThemSanPham;
-        private System.Windows.Forms.Button btnTrangChu;
+        public System.Windows.Forms.Button btnRevenue;
+        public System.Windows.Forms.Button btnHistory;
+        public System.Windows.Forms.Button btnThemSanPham;
+        public System.Windows.Forms.Button btnTrangChu;
+        public System.Windows.Forms.Button btnThoat;
+        public System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.CheckBox chkNgungKinhDoanh;
+        private System.Windows.Forms.TextBox txtThem;
+        private System.Windows.Forms.Label label20;
     }
 }

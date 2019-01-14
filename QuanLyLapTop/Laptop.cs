@@ -25,6 +25,7 @@ namespace QuanLyLapTop
         public double Weight { get; set; }
         public int Number { get; set; }
         public string ImagePath { get; set; }
+        public bool Status { get; set; }
 
         public override string ToString()
         {
