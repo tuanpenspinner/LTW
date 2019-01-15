@@ -73,9 +73,29 @@ namespace QuanLyLapTop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Actions_document_save_icon {
+            get {
+                object obj = ResourceManager.GetObject("Actions-document-save-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add_icon {
             get {
                 object obj = ResourceManager.GetObject("add-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Apps_Dialog_Logout_icon {
+            get {
+                object obj = ResourceManager.GetObject("Apps-Dialog-Logout-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -186,6 +206,16 @@ namespace QuanLyLapTop.Properties {
         internal static System.Drawing.Bitmap No_imgae {
             get {
                 object obj = ResourceManager.GetObject("No imgae", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Product_documentation_icon {
+            get {
+                object obj = ResourceManager.GetObject("Product-documentation-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

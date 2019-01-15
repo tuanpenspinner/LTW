@@ -7,8 +7,9 @@ using System.Windows.Forms;
 
 namespace QuanLyLapTop
 {
-    class btnEditLaptop: Button
+   public class btnEditLaptop: Button
     {
         public Laptop laptop { get; set; }
+
     }
 }
